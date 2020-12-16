@@ -1,0 +1,26 @@
+{
+  "name": "choco-orderservice",
+  "version": "1.0.0",
+  "description": "Ordering Service and many more.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rohan2596/choco-orderService.git"
+  },
+  "keywords": [
+    "order",
+    "choco-app",
+    "choco",
+    "nodeJs",
+    "express"
+  ],
+  "author": "ROHAN KADAM",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rohan2596/choco-orderService/issues"
+  },
+  "homepage": "https://github.com/Rohan2596/choco-orderService#readme"
+}
