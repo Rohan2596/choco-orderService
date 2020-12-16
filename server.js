@@ -1,5 +1,8 @@
 const express=require('express')
 const app=express();
+const routes=require('./routes/route')
+
+app.use("/choco/customer/order",routes);
 
 
 
