@@ -1,6 +1,7 @@
 const express = require('express');
+const orderController = require('../controller/order.controller');
 const route = express.Router();
-
+const OrderController=require('../controller/order.controller')
 
 /** 
  * Routes for Placing A Order from catalog..
@@ -10,10 +11,10 @@ const route = express.Router();
  * 4)Getting All order based on customer id
  * 
 */
-route.post("/:token", () => { console.log("making an order..."); })
-route.put("/:token", () => { console.log("Editing order..."); })
-route.get("/:token/:orderId",()=>{console.log("Getting user based on orderId");})
-route.get("/:token/all",()=>{console.log("Getting All User Order..");})
+route.post("/:token",orderController.placeOrder)
+route.put("/:token", orderController.editOrder)
+route.get("/:token/:orderId",orderController.getAOrderofCustomer)
+route.get("/:token/all",orderController.getAllOrderOfCustomer)
 
 
 module.exports = route
