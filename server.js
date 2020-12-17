@@ -3,6 +3,11 @@ const app=express();
 const routes=require('./routes/route')
 const createError = require('http-errors')
 
+//Express Validator
+const expressValidator = require('express-validator');
+app.use(expressValidator());
+
+
 app.use("/choco/customer/order",routes);
 
 

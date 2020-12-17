@@ -12,7 +12,7 @@ const OrderController=require('../controller/order.controller')
  * 
 */
 route.post("/:token",orderController.placeOrder)
-route.put("/:token", orderController.editOrder)
+route.put("/:token/:orderId", orderController.editOrder)
 route.get("/:token/:orderId",orderController.getAOrderofCustomer)
 route.get("/:token/all",orderController.getAllOrderOfCustomer)
 
