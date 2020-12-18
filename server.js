@@ -5,9 +5,10 @@ const createError = require('http-errors')
 
 //Express Validator
 const expressValidator = require('express-validator');
+const { use } = require('./routes/route');
 app.use(expressValidator());
 
-
+require('./configuration/database.config')
 app.use("/choco/customer/order",routes);
 
 
