@@ -44,9 +44,16 @@ class OrderService {
             next(error)
         }
     };
-    getAllCustomerOrder = (orderDto, next) => {
+    getAllCustomerOrders = (orderDto, next) => {
         try {
             console.log(orderDto);
+            return orderModel.getAllCustomerOrder(orderDto)
+            .then((data) => {
+                return data;
+
+            }).catch((err) => {
+                return err;
+            })
         } catch (error) {
             next(error)
         }

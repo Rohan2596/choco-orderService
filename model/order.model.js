@@ -83,21 +83,30 @@ class OrderModel {
 
                     }
 
-                }).catch((err)=>{
-
                 })
             })
         } catch (error) {
-
+               next(error)
         }
     };
     getAllCustomerOrder = (orderDto, next) => {
         try {
             return new Promise((resolve, reject) => {
+ 
+                order.find()
+                .then((result)=>{
+                    if(result){
+                        resolve({ message: 'Order Placed Edited successfully.', data: result });
 
+                    }else{
+                        reject({ message: 'Order Failed !', error: err });
+
+                    }
+
+                })
             })
         } catch (error) {
-
+               next(error)
         }
     }
 }
