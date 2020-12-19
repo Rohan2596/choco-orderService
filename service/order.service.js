@@ -1,8 +1,17 @@
+const orderModel=require('../model/order.model')
 class OrderService{
 
     placeOrder=(orderDto,next)=>{
         try {
             console.log(orderDto);
+            return orderModel.placeOrder(orderDto)
+            .then((data) => {
+
+                return data;
+            })
+            .catch((err) => {
+                return err;
+            });
         } catch (error) {
             next(error)
         }
@@ -10,7 +19,13 @@ class OrderService{
     editOrderPlaced=(editOrderDto,next)=>{
         try {
             console.log(editOrderDto);
-        } catch (error) {
+            return orderModel.editPlacedOrder(editOrderDto)
+            .then((data)=>{
+                return data;
+            }).catch((err)=>{
+                return err;
+            })
+        } catch (error) {console.log(error);
             next(error)
         }
     };
