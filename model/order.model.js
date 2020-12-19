@@ -72,6 +72,20 @@ class OrderModel {
         try {
             return new Promise((resolve, reject) => {
  
+                order.findOne({
+                    '_id':orderDto.order_id
+                }).then((result)=>{
+                    if(result){
+                        resolve({ message: 'Order Placed Edited successfully.', data: result });
+
+                    }else{
+                        reject({ message: 'Order Failed !', error: err });
+
+                    }
+
+                }).catch((err)=>{
+
+                })
             })
         } catch (error) {
 

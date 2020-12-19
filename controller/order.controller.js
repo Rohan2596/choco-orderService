@@ -95,13 +95,25 @@ class OrderController {
             let orderDto={
                 customer_id:"",
                 items:[],
+                order_id:orderId
 
             }
             orderService.getAOrderPlaced(orderDto)
-            response.success = true;
-            response.message = "Getting A Customer order Successfully.";
-            response.data = token +"Order Id:- "+ orderId ;
-            return res.status(200).send(response);
+            .then((data)=>{
+                response.success = true;
+                response.message = "Getting A Customer order Successfully.";
+                response.data = data.data;
+                return res.status(200).send(response);
+
+            }).catch(err=>{
+                response.success = false;
+                response.message = "Order Edited Un-Successfully.";
+                response.data = err;
+                return res.status(400).send(response);
+
+            })
+           
+          
 
         } catch (error) {
             next(error)
