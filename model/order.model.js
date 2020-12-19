@@ -19,3 +19,54 @@ const orderModel = new Schema({
 });
 
 const order=mongoose.model('order',orderModel);
+class OrderModel{
+placeOrder = (orderDto, next) => {
+        try {
+            return new Promise((resolve, reject) => {
+
+            
+                new order("")
+                    .save()
+                    .then(result => {
+                        resolve({ message: 'Catalog Added successfully!', data: result });
+                    }).catch(err => {
+                        reject({ message: 'Catalog Addition Failed!', error: err });
+                    })
+
+            })
+
+        } catch (error) {
+            next(error)
+
+        }
+    };
+
+    editPlacedOrder=(orderDto,next)=>{
+        try {
+            return new Promise((resolve,reject)=>{
+
+            })
+        } catch (error) {
+            
+        }
+    };
+    getAPlacedOrder=(orderDto,next)=>{
+        try {
+            return new Promise((resolve,reject)=>{
+
+            })
+        } catch (error) {
+            
+        }
+    };
+    getAllCustomerOrder=(orderDto,next)=>{
+        try {
+            return new Promise((resolve,reject)=>{
+                
+            })
+        } catch (error) {
+            
+        }
+    }
+}
+module.exports=new OrderModel();
