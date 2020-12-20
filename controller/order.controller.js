@@ -151,5 +151,37 @@ class OrderController {
 
     };
 
+    getAllOrdersPlaced=(req, res, next)=>{
+        try {
+            let token = req.params.token
+
+            let response = {}
+            let orderDto = {
+                customer_id: "",
+                items: [],
+
+            }
+            orderService.getAllPlacedOrders(orderDto)
+                .then((data) => {
+
+                    response.success = true;
+                    response.message = "Getting All Order of Customer Successfully.";
+                    response.data = data.data;
+                    return res.status(200).send(response);
+                }).catch(err => {
+                    response.success = false;
+                    response.message = "Order Edited Un-Successfully.";
+                    response.data = err;
+                    return res.status(400).send(response);
+
+                })
+
+
+        } catch (error) {
+            console.log(error);
+            next(error)
+        }
+    }
+
 }
 module.exports = new OrderController();

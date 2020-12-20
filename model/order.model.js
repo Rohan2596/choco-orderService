@@ -108,6 +108,24 @@ class OrderModel {
         } catch (error) {
                next(error)
         }
+    };
+    getAllOrderPlacedOrders=(orderDto,next)=>{
+        try {
+            return new Promise((resolve,reject)=>{
+                order.find()
+                .then((result)=>{
+                    if(result){
+                        resolve({ message: 'Order Placed All.', data: result });
+
+                    }else{
+                        reject({ message: 'Order Failed !', error: err });
+
+                    }
+                })
+            })
+        } catch (error) {
+            next(error)
+        }
     }
 }
 module.exports = new OrderModel();

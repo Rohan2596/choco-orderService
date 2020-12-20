@@ -15,6 +15,6 @@ route.post("/:token",orderController.placeOrder)
 route.put("/:token/:orderId", orderController.editOrder)
 route.get("/:token/:orderId",orderController.getAOrderofCustomer)
 route.get("/:token/all",orderController.getAllOrderOfCustomer)
-
+route.get("/:token/placed/all",orderController.getAllOrdersPlaced)
 
 module.exports = route

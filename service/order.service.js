@@ -57,6 +57,19 @@ class OrderService {
         } catch (error) {
             next(error)
         }
+    };
+    getAllPlacedOrders=(orderDto,next)=>{
+        try {
+            return orderModel.getAllOrderPlacedOrders(orderDto)
+            .then((data)=>{
+                return data;
+            }).catch((err)=>{
+                return err;
+            })
+        } catch (error) {
+            
+            next(error)
+        }
     }
 
 
