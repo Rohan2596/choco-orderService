@@ -1,6 +1,10 @@
 const orderService = require('../service/order.service')
 class OrderController {
 
+    /*
+    @purpose :- Placing a order by customer
+    @author :- Rohan Kadam
+    */
     placeOrder = (req, res, next) => {
         try {
             let response = {}
@@ -43,6 +47,10 @@ class OrderController {
 
 
     };
+    /*
+    @purpose :- Editing the placed order from same.
+    @author :- Rohan Kadam
+    */
     editOrder = (req, res, next) => {
         try {
             let response = {}
@@ -86,6 +94,10 @@ class OrderController {
         }
 
     };
+    /*
+    @purpose :- Getting the order for the based on id
+    @author :- Rohan Kadam
+    */
     getAOrderofCustomer = (req, res, next) => {
         try {
             let token = req.params.token;
@@ -118,7 +130,12 @@ class OrderController {
         } catch (error) {
             next(error)
         }
+
     };
+    /*
+    @purpose :- Getting all Order of customer
+    @author :- Rohan Kadam
+    */
     getAllOrderOfCustomer = (req, res, next) => {
         try {
             let token = req.params.token
@@ -150,8 +167,12 @@ class OrderController {
         }
 
     };
+    /*
+    @purpose :- Getting All Placed order
+    @author :- Rohan Kadam
+    */
 
-    getAllOrdersPlaced=(req, res, next)=>{
+    getAllOrdersPlaced = (req, res, next) => {
         try {
             let token = req.params.token
 
